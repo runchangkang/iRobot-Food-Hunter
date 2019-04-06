@@ -6,7 +6,7 @@ from urllib import request
 from PyQt5.QtCore import QThread,pyqtSignal
 import json
 from model.recipe import Recipe
-from model.config import api_key
+from resource.config import api_key
 
 
 # The manager of the recipe, handling the fetch, parse and return tasks

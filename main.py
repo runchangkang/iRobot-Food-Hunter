@@ -1,6 +1,6 @@
 from PyQt5 import QtWidgets
 from view.view import Ui_MainWindow
-from model.foodManager import FoodManager
+from controller.foodManager import FoodManager
 import sys
 
 if __name__ == "__main__":

@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtWidgets
-from model.foodManager import FetchContentThread
+from controller.foodManager import FetchContentThread
 class Ui_MainWindow(object):
 
 	def setModel(self,model):
