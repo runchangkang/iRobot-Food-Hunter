@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+# author: Runchang Kang (runchangkang.com)
 
 # The bean class for the recipe object, for maintaining future extensibility
 class Recipe:

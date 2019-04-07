@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+# author: Runchang Kang (runchangkang.com)
 
 from urllib import parse
 from urllib import request
@@ -29,6 +29,8 @@ class FoodManager:
 
     #search by current ingredients
     def searchByExistingIngredients(self):
+        if self.params["key"] == "":
+            return 0,"","","Please fill in your API KEY in resource/config.py first!"
         if len(self.userInputIngredient) == 0 :
             return 0,"","","Please enter some ingredients first!"
 
@@ -40,10 +42,7 @@ class FoodManager:
         if result:
             amount = result['count']
             if amount == 0:
-
                 return 0,existing,missing,"Cannot find recipe based on your input, please double check your input."
-
-
             recipe = Recipe(result["recipes"][0])
             if recipe.validObject:
                 self.recipe = recipe

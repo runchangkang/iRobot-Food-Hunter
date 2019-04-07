@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'irobotView.ui'
-#
+# author: Runchang Kang (runchangkang.com)
 # Created by: PyQt5 UI code generator 5.12.1
 #
-# WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtWidgets
 from controller.foodManager import FetchContentThread
@@ -114,9 +111,9 @@ class Ui_MainWindow(object):
 			self.textBrowser.append("Food Name: "+ self.model.recipe.title)
 			self.textBrowser.append("=============================")
 			self.textBrowser.append("The ingredients you've already have: ")
-			self.textBrowser.append("=============================")
+			self.textBrowser.append("-----------------------------")
 			self.textBrowser.append(existing)
-			self.textBrowser.append("=============================")
+			self.textBrowser.append("-----------------------------")
 			self.textBrowser.append("The ingredients you still need: ")
 			self.textBrowser.append("=============================")
 			self.textBrowser.append(missing)
