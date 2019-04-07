@@ -24,6 +24,8 @@ class Ui_MainWindow(object):
 		self.lineEdit.setGeometry(QtCore.QRect(30, 40, 201, 31))
 		self.lineEdit.setClearButtonEnabled(True)
 		self.lineEdit.setObjectName("lineEdit")
+		self.lineEdit.returnPressed.connect(self.addAction)
+
 
 		self.resultLabel = QtWidgets.QLabel(self.centralwidget)
 		self.resultLabel.setGeometry(QtCore.QRect(430, 30, 57, 16))
