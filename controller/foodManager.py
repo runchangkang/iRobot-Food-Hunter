@@ -56,21 +56,21 @@ class FoodManager:
                 return 0,existing,missing,"Data corrupted, please try again."
         else:
 
-            return 0,existing,missing,"Internet error, please try again later."
+            return 0,existing,missing,"Internet error, please check your Key and try again later."
 
     # comparing and calculating the missing ingredients
     def checkRecipeIngredientsWithUserIngredients(self,recipe,userInputIngredientSet):
         ingredients = recipe.ingredients
         existingSet = set()
-        missingSet = set()
+        missingList = []
         for userIngredient in userInputIngredientSet:
             for recipeIngredient in ingredients:
                 if userIngredient in recipeIngredient.lower():
                     existingSet.add(recipeIngredient)
         for recipeIngredient in ingredients:
-            if recipeIngredient not in existingSet:
-                missingSet.add(recipeIngredient)
-        return "\n".join(existingSet), "\n".join(missingSet)
+            if recipeIngredient not in existingSet and not recipeIngredient.isspace():
+                missingList.append(recipeIngredient)
+        return "\n".join(existingSet), "\n".join(missingList)
 
     # a helper function that connect to the internet and fetch data from the user
     # input url

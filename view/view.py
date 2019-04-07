@@ -80,7 +80,7 @@ class Ui_MainWindow(object):
 		self.retranslateUi(MainWindow)
 
 		self.thread = FetchContentThread(self.model)
-		self.thread.result.connect(self.setFetchResult)
+		self.thread.result.connect(self.resultCallback)
 		QtCore.QMetaObject.connectSlotsByName(self.MainWindow)
 
 	def addAction(self):
@@ -105,16 +105,16 @@ class Ui_MainWindow(object):
 		self.textBrowser.repaint()
 		self.thread.start()
 
-	def setFetchResult(self,isSuccess, existing,missing, message):
+	def resultCallback(self,isSuccess, existing,missing, message):
 		if isSuccess:
 			self.textBrowser.setText(message)
 			self.textBrowser.append("Food Name: "+ self.model.recipe.title)
-			self.textBrowser.append("=============================")
-			self.textBrowser.append("The ingredients you've already have: ")
+			self.textBrowser.append("-----------------------------")
+			self.textBrowser.append("The ingredients you've ALREADY HAD: ")
 			self.textBrowser.append("-----------------------------")
 			self.textBrowser.append(existing)
-			self.textBrowser.append("-----------------------------")
-			self.textBrowser.append("The ingredients you still need: ")
+			self.textBrowser.append("=============================")
+			self.textBrowser.append("The ingredients you STILL NEED: ")
 			self.textBrowser.append("=============================")
 			self.textBrowser.append(missing)
 		else:
