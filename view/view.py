@@ -108,14 +108,16 @@ class Ui_MainWindow(object):
 	def resultCallback(self,isSuccess, existing,missing, message):
 		if isSuccess:
 			self.textBrowser.setText(message)
-			self.textBrowser.append("Food Name: "+ self.model.recipe.title)
-			self.textBrowser.append("-----------------------------")
+			self.textBrowser.append("-------------------------------------")
+			self.textBrowser.append("TITLE: "+ self.model.recipe.title)
+			self.textBrowser.append("-------------------------------------")
+			self.textBrowser.append("\n")
 			self.textBrowser.append("The ingredients you've ALREADY HAD: ")
-			self.textBrowser.append("-----------------------------")
+			self.textBrowser.append("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 			self.textBrowser.append(existing)
-			self.textBrowser.append("=============================")
+			self.textBrowser.append("\n")
 			self.textBrowser.append("The ingredients you STILL NEED: ")
-			self.textBrowser.append("=============================")
+			self.textBrowser.append("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 			self.textBrowser.append(missing)
 		else:
 			self.textBrowser.setText(message)
