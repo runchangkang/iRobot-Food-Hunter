@@ -33,7 +33,9 @@ in config.py
 ## How to use?
 Type in ingredient name in the textField and press **Add** or press enter key
 
-After typed in enough ingredients, press **Search**
+After typing in enough ingredients, press **Search**
+
+The result will be displayed on the right. 
 
 To clear all of previous ingredients, press **Clear**
 
